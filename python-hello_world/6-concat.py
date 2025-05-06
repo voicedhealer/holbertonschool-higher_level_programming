@@ -2,4 +2,4 @@
 str1 = "Holberton"
 str2 = "School"
 concat = str1 + " " +str2
-print(f"Welcome to {concat} !")
+print(f"Welcome to {concat}!")
