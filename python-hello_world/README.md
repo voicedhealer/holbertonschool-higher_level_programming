@@ -1,6 +1,6 @@
 # Projet Python : Hello, World
 
-![Image Représentant Python Hello World](URL_DE_VOTRE_IMAGE_ICI)
+![Image Représentant Python Hello World](https://github.com/voicedhealer/holbertonschool-higher_level_programming/blob/main/python-hello_world/assets_task_01jszk0ex8e6manstat6hrhwpd_1745890688_img_0.webp)
 *Remplacez `URL_DE_VOTRE_IMAGE_ICI` par le lien direct vers une image que vous souhaitez utiliser (par exemple, le logo Python, un terminal affichant "Hello, World!", ou une image créative liée au code).*
 
 ## Description du Projet
