@@ -1,7 +1,6 @@
 # Python - if/else, loops, functions
 
-![Image Représentant Python if/else, loops, functions](URL_DE_VOTRE_IMAGE_ICI)
-*Remplacez `URL_DE_VOTRE_IMAGE_ICI` par le lien direct vers une image pertinente (par exemple, un diagramme de flux, un extrait de code illustratif, ou le logo Python).*
+![Image Représentant Python if/else, loops, functions](https://github.com/voicedhealer/holbertonschool-higher_level_programming/blob/main/python-if_else_loops_functions/Art%20Urbain%20Python%20Graffiti.png)
 
 ## Description du Projet
 
