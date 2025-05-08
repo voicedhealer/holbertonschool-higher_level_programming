@@ -10,3 +10,4 @@ for alpha in range(97, 123):
     # correspondant grâce à chr()
     # L'option end="" permet de ne pas aller à la ligne
     # après chaque caractère (tout est sur la même ligne)
+    
