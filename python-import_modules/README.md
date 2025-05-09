@@ -1,7 +1,6 @@
 # Python - Import & Modules
 
-![Image Représentant Python Imports et Modules](URL_DE_VOTRE_IMAGE_ICI)
-*Remplacez `URL_DE_VOTRE_IMAGE_ICI` par le lien direct vers une image pertinente (par exemple, un diagramme illustrant l'importation, le logo Python, ou un extrait de code illustratif).*
+![Image Représentant Python Imports et Modules](https://github.com/voicedhealer/holbertonschool-higher_level_programming/blob/main/python-import_modules/img_python.png)
 
 ## Description du Projet
 
