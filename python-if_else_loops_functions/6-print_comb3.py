@@ -10,5 +10,5 @@ for i in range(0, 9):
         # Affiche la paire de chiffres i et j collés (ex : "01", "12", "89")
         # Ajoute une virgule et un espace après chaque 
         # paire sauf la dernière (quand i=8 et j=9)
-        print()
-        # Affiche un retour à la ligne à la fin pour que la sortie soit propre
+print()
+# Affiche un retour à la ligne à la fin pour que la sortie soit propre
