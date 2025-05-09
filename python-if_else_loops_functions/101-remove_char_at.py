@@ -5,7 +5,7 @@ en supprimant le caractère à la position n.
 """
 
 
-def remove_char_at(str_input, n): # Si le proto impose 'str', utilisez 'str'
+def remove_char_at(str_input, n):
     """Crée une copie de str_input sans le caractère à l'index n."""
     if n < 0 or n >= len(str_input):
         return str_input  # Retourne la chaîne originale si n est invalide
