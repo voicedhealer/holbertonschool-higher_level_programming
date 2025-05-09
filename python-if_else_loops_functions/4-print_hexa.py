@@ -6,4 +6,3 @@ for i in range(99):
     # Affiche chaque entier 'i' en décimal (d)
     #  puis en hexadécimal (x) avec le préfixe '0x'
     # Exemple : "42 = 0x2a"
-    
