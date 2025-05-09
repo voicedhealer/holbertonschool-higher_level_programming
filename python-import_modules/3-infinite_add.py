@@ -2,7 +2,7 @@
 # Ce script additionne tous les arguments passés en ligne de commande.
 
 # Importer le module nécessaire pour les arguments.
-import sys # 'sys' n'apparaît qu'ici pour les contraintes du checker (non visibles sur CETTE image)
+import sys
 
 if __name__ == "__main__":
     total_sum = 0
