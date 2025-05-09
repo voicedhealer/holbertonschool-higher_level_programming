@@ -17,7 +17,7 @@ def uppercase(str):
             new_str += chr(ord(c) - 32)
             # Convertit la lettre minuscule en majuscule :
             # - ord(c) donne le code ASCII du caractère c
-            # - ord(c) - 32 donne le code ASCII de la 
+            # - ord(c) - 32 donne le code ASCII de la
             # - lettre majuscule correspondante
             # - chr(...) convertit le code ASCII en caractère
         else:
