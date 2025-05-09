@@ -10,7 +10,7 @@ def islower(c):
         # aux lettres minuscules ('a' à 'z')
 
         return True
-        # Si 'c' est une lettre minuscule, 
+        # Si 'c' est une lettre minuscule,
         # la fonction retourne True
 
     return False
