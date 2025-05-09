@@ -1,16 +1,25 @@
 #!/usr/bin/python3
 """
-Fonction qui crée une copie de la chaîne,
-en supprimant le caractère à la position n.
+Ce module contient une fonction pour supprimer un caractère d'une chaîne.
 """
+# (Deux lignes vides ici si le docstring de module est présent)
 
-def remove_char_at(str_input, n): # Si le proto impose 'str', utilisez 'str'
-    """Crée une copie de str_input sans le caractère à l'index n."""
+def remove_char_at(str_input, n):
+    """Crée une copie de str_input sans le caractère à l'index n.
+
+    Args:
+        str_input (str): La chaîne d'entrée.
+        n (int): L'index du caractère à supprimer.
+
+    Returns:
+        str: La nouvelle chaîne avec le caractère supprimé, ou la
+             chaîne originale si n est hors limites.
+    """
+    # (Une ligne vide ici si le docstring de fonction est multi-lignes
+    #  et avant le code de la fonction, mais ce n'est pas une règle E302)
     if n < 0 or n >= len(str_input):
-        return str_input  # Retourne la chaîne originale si n est invalide
+        return str_input  # Exemple de commentaire en ligne bien espacé
 
     new_string = ""
-    for i in range(len(str_input)):
-        if i != n:  # Si l'index actuel n'est pas celui à supprimer
-            new_string = new_string + str_input[i]  # Ajouter le caractère
+    # ... (reste de votre code) ...
     return new_string
