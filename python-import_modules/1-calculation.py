@@ -2,7 +2,6 @@
 
 # Ce bloc garantit que le code ne s'exécute que si le script est lancé directement
 if __name__ == "__main__":
-    # Importe les fonctions add, sub, mul, div du fichier calculator_1.py
     from calculator_1 import add, sub, mul, div
     # Définit la variable a avec la valeur 10
     a = 10
