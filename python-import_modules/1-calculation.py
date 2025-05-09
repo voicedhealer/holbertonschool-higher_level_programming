@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-# Ce bloc garantit que le code ne s'exécute que si le script est lancé directement
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     # Définit la variable a avec la valeur 10
@@ -15,4 +14,3 @@ if __name__ == "__main__":
     print("{} * {} = {}".format(a, b, mul(a, b)))
     # Affiche le résultat de la division de a et b
     print("{} / {} = {}".format(a, b, div(a, b)))
-    
