@@ -16,7 +16,7 @@ def print_matrix_integer(matrix=[[]]):
             numbers_string_for_this_row.append(numbers_format)
 
         # Joindre toutes les chaînes de nombres de la ligne avec un ESPACE
-        # Cette opération DOIT être indentée pour être 
+        # Cette opération DOIT être indentée pour être
         # à l'intérieur de la boucle "for row in matrix"
         line_to_print = " ".join(numbers_string_for_this_row)
 
