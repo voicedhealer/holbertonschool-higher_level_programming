@@ -6,5 +6,5 @@ def multiple_returns(sentence):
         first_char = None
     else:
         first_char = sentence[0]
-        
+
     return(len_char, first_char)
