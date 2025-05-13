@@ -18,9 +18,9 @@ def add_tuple(tuple_a=(), tuple_b=()):
     elif len(tuple_b) == 1:
         val1_b = tuple_b[0]
         val2_b = 0
-    else: len(tuple_b) >= 2
-    val1_b = tuple_b[0]
-    val2_b = tuple_b[1]
+    else: #len(tuple_b) >= 2
+        val1_b = tuple_b[0]
+        val2_b = tuple_b[1]
 
     result1 = val1_a + val1_b
     result2 = val2_a + val2_b
