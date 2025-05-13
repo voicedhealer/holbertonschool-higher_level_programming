@@ -10,8 +10,9 @@ def max_integer(my_list=[]):
     plus_grand = my_list[0]
 
     # Parcourir la liste à partir du DEUXIÈME élément (si elle en a)
-    # ou parcourir toute la liste et comparer. Parcourir toute la liste est plus simple.
-    for nombre in my_list: # Renommer la variable de boucle
+    # ou parcourir toute la liste et comparer.
+    # Parcourir toute la liste est plus simple.
+    for nombre in my_list:
         if nombre > plus_grand:
             plus_grand = nombre
 
