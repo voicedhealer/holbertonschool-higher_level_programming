@@ -4,7 +4,8 @@ def roman_to_int(roman_string):
     if roman_string is None or not isinstance(roman_string, str):
         return 0
 
-    # Étape 2: Définir le dictionnaire des valeurs romaines (si ce n'est pas déjà fait globalement)
+    # Étape 2: Définir le dictionnaire des valeurs romaines
+    # (si ce n'est pas déjà fait globalement)
     valeurs_romaines = {
         'I': 1, 'V': 5, 'X': 10, 'L': 50,
         'C': 100, 'D': 500, 'M': 1000
@@ -14,12 +15,6 @@ def roman_to_int(roman_string):
     total_entier = 0
     i = 0
     longueur_chaine = len(roman_string)
-
-    # Cas où la chaîne est vide après la validation de type (si "" doit retourner 0)
-    # L'énoncé dit "1 to 3999", donc une chaîne vide ne devrait pas être un cas valide pour un nombre romain.
-    # Le code actuel la traiterait et retournerait 0 si elle est vide car la boucle while ne s'exécuterait pas.
-    # C'est un comportement acceptable. Si "" devait explicitement retourner 0 avant même la boucle,
-    # tu ajouterais : if not roman_string: return 0 (après la validation de type)
 
     # Étape 4: Boucle de conversion
     while i < longueur_chaine:
