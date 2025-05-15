@@ -16,12 +16,12 @@ def safe_print_list(my_list=[], x=0):
             # Cela signifie qu'on a atteint la fin de la liste
             # (ou que x est trop grand).
             # On doit donc arrêter d'essayer d'afficher.
-            break  # Sortir de la boucle for
+            break
 
     # Après la boucle (soit parce qu'on a affiché 'x'
     # éléments, soit parce qu'on a 'break' à cause d'une IndexError),
     # afficher un retour à la ligne final.
-    print() # Un print vide fait un retour à la ligne
+    print()
 
     # Retourner le nombre d'éléments qui 
     # ont été effectivement affichés.
