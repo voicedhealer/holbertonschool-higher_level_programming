@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
-    elements_printed_count = 0  # Compteur pour le nombre réel d'éléments affichés
+    elements_printed_count = 0
 
     # Boucler 'x' fois au maximum
     for i in range(x):
