@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
 Module to test 6-max_integer
 This module provides a unittest test for 6-max_integer
