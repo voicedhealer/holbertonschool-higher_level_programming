@@ -6,6 +6,7 @@ Une classe vide qui définit un carré.
 
 class Square:
     """
-    Une classe vide qui définit un carré.
+    Private instance attribute
     """
+    _size = None
     pass
