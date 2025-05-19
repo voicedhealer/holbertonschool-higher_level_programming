@@ -3,6 +3,7 @@
 Une classe vide qui définit un carré.
 """
 
+
 class Square:
     """
     Une classe vide qui définit un carré.
