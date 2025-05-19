@@ -12,7 +12,6 @@ class Square:
     Attributs privés:
         __size (int): La taille du cotédu carré
     """
-    __size = None
 
 def __init__(self, size):
     """
