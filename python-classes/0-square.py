@@ -1,12 +1,24 @@
 #!/usr/bin/python3
 """
-Une classe vide qui définit un carré.
+Ce module définit une classe Square.
+La classe Square définit un carré par sa taille.
 """
 
 
 class Square:
     """
-    Private instance attribute
+    Représente un carré
+
+    Attributs privés:
+        __size (int): La taille du cotédu carré
     """
-    _size = None
-    pass
+    __size = None
+
+def __init__(self, size):
+    """
+    Initialise ube nouvelle intance de Square
+
+    Args:
+        size (int): La taille du coté du carré
+    """
+    self.__size = size
