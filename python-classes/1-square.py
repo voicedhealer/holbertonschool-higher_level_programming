@@ -13,11 +13,11 @@ class Square:
         __size (int): La taille du cotédu carré
     """
 
-def __init__(self, size):
-    """
-    Initialise ube nouvelle intance de Square
+    def __init__(self, size):
+        """
+        Initialise ube nouvelle intance de Square
 
-    Args:
+        Args:
         size (int): La taille du coté du carré
-    """
-    self.__size = size
+        """
+        self.__size = size
