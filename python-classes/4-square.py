@@ -5,6 +5,7 @@ La classe Square définit un carré par sa taille,
 avec accès et modification contrôlés via des propriétés.
 """
 
+
 class Square:
     """
     Représente un carré.
@@ -21,7 +22,6 @@ class Square:
         Args:
             size (int, optional): La taille du côté du carré. Défaut à 0.
         """
-        # L'assignation à self.size appellera automatiquement le setter @size.setter
         self.size = size
 
     @property
