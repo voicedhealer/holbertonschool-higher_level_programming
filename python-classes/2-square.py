@@ -10,7 +10,7 @@ class Square:
     Représente un carré
 
     Attributs privés:
-        __size (int): La taille du cotédu carré
+    __size (int): La taille du cotédu carré
     """
 
     def __init__(self, size=0):
@@ -20,10 +20,10 @@ class Square:
         Args:
         size (int): La taille du coté du carré
         """
-        if not isinstance(size, int): 
+        if not isinstance(size, int):
             raise TypeError('size must be an integer')
         
-        if size >= 0:
-            raise ValueError("siez must be >= 0")
+        if size < 0:
+            raise ValueError("size must be < 0")
         
         self.__size = size
