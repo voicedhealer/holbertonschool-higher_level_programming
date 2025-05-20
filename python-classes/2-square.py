@@ -16,7 +16,6 @@ class Square:
     def __init__(self, size=0):
         """
         Initialise ube nouvelle intance de Square
-
         Args:
         size (int): La taille du coté du carré
         """
@@ -25,5 +24,5 @@ class Square:
         
         if size < 0:
             raise ValueError("size must be >= 0")
-        
+
         self.__size = size
