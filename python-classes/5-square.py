@@ -53,6 +53,7 @@ class Square:
         self.__size = value
 
     def area(self):
+        
         """
         Calcule et retourne l'aire actuelle du carré.
 
@@ -61,6 +62,7 @@ class Square:
         """
         return self.__size ** 2
     def my_print(self):
+
         """
         Imprime le carré avec des caractères '#' sur stdout
         Si la taille est 0, imprime une ligne vide
