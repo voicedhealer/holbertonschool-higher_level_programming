@@ -9,6 +9,6 @@ class Rectangle:
     initiallisation de size à None et private _
     """
 
-    _size  = None
+    _size = None
 
     pass
