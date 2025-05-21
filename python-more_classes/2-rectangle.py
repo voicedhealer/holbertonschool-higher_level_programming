@@ -18,16 +18,17 @@ class Rectangle:
 
         self.width = width
         self.height = height
+
     def area(self):
         """
-        
+        calcul de l'air aera
         """
-        rectangle_aera =  self.width * self.height
+        rectangle_aera = self.width * self.height
         return rectangle_aera
-    
+
     def perimeter(self):
         """
-        
+        calcul du périmtre
         """
         if self.width == 0 or self.height == 0:
             return 0
