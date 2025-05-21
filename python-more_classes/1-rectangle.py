@@ -6,14 +6,14 @@ Module pour la construction de la class rectangle
 
 class Rectangle:
     """
-    definit un rectangle avec width et height 
+    definit un rectangle avec width et height
     """
 
     def __init__(self, width=0, height=0):
         """
-        initialise widht and height 
-        les setters sont appelés 
-        args : widht et height à 0 par default 
+        initialise widht and height
+        les setters sont appelés
+        args : widht et height à 0 par default
         """
 
         self.width = width
@@ -25,7 +25,8 @@ class Rectangle:
         int: définit la largeur du rectangle.
         Attention: la largeur doit être un entier positif ou nul.
         """
-        return self.__width  #retourne l'attribut de stockage privé
+        return self.__width   # retourne l'attribut de stockage privé
+
     @property
     def height(self):
         """
@@ -33,7 +34,6 @@ class Rectangle:
         De même la hauteur doit être un entier positif ou nul.
         """
         return self.__height
-
 
     @width.setter
     def width(self, value):
@@ -48,5 +48,5 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height must be >= 0")    
+            raise ValueError("height must be >= 0")
         self.__height = value
