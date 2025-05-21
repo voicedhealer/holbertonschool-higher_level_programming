@@ -28,15 +28,15 @@ L'idée est de fournir des exemples clairs et concis sur des sujets spécifiques
 ## Structure du Projet (Exemple)
 
 Ce projet est typiquement composé de plusieurs fichiers Python (`.py`), chacun se concentrant sur un ou plusieurs des concepts listés ci-dessus. Par exemple :
-*   python-more_classes/
-*   0-square.py # Introduction simple à une classe Square
-*   1-rectangle_attributes.py # Gestion des attributs (taille, position)
-*   2-area_and_print.py # Ajout de méthodes (calcul d'aire, affichage)
-*   3-private_size.py # Utilisation d'attributs privés et de validation
-*   4-square_properties.py # Implémentation avec @property pour la taille
-*   5-class_vs_static.py # Exemples de méthodes de classe et statiques
-*   6-custom_print.py # Définition de str et/ou repr
-*   README.md # Ce fichier d'information
+*   python-more_classes :
+*   0-square.py --> Introduction simple à une classe Square
+*   1-rectangle_attributes.py --> Gestion des attributs (taille, position)
+*   2-area_and_print.py --> Ajout de méthodes (calcul d'aire, affichage)
+*   3-private_size.py --> Utilisation d'attributs privés et de validation
+*   4-square_properties.py --> Implémentation avec @property pour la taille
+*   5-class_vs_static.py --> Exemples de méthodes de classe et statiques
+*   6-custom_print.py --> Définition de str et/ou repr
+*   README.md --> Ce fichier d'information
 
 ## Prérequis
 
