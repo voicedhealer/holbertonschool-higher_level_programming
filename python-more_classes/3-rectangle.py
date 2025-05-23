@@ -75,4 +75,4 @@ class Rectangle:
             for _ in range(self.height):
                 current_line = "#" * self.width
                 repr_string.append(current_line)
-                return "\n".join(repr_string)
+            return "\n".join(repr_string)
