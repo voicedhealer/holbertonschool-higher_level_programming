@@ -8,7 +8,7 @@ class Rectangle:
     """
     definit un rectangle avec width et height
     """
-    count = 0
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
@@ -21,7 +21,7 @@ class Rectangle:
         self.width = width
         self.height = height
 
-        Rectangle.count += 1
+        Rectangle.number_of_instances += 1
 
     def area(self):
         """
@@ -96,5 +96,4 @@ class Rectangle:
         Méthode del pour la suppréssion d'une instance de la Classe Rectangle
         """
         print("Bye rectangle...")
-
-        Rectangle.count -= 1
+        Rectangle.number_of_instances -= 1
