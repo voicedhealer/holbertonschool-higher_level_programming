@@ -82,7 +82,7 @@ class Rectangle:
         else:
             repr_string = []
             for _ in range(self.height):
-                current_line = str(Rectangle.print_symbol) * self.width
+                current_line = str(self.print_symbol) * self.width
                 repr_string.append(current_line)
             return "\n".join(repr_string)
 
