@@ -9,5 +9,4 @@ def lookup(obj):
     """
     Méthode qui retoourne une liste
     """
-    for list in obj:
-        return list[obj]
+    return dir(obj)
