@@ -6,4 +6,4 @@ et methode disponible par objet
 
 
 def lookup(obj):
-    return list
+    return list  # méthode qui retourne une liste
