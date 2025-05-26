@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Mylist(list):
     """
     Classe Mylist qui hérite de la calsse list
