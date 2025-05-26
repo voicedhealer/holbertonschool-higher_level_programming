@@ -9,7 +9,7 @@ class MyList(list):
     def print_sorted(self):
         """
         Méthode publique print_stored qui affiche
-        les éléments de la liste
+        les éléments 
         """
         liste_triee_pour_impression = sorted(self)
 
