@@ -9,4 +9,7 @@ class Mylist(list):
         les éléments de la liste
         """
         liste_triee_pour_impression = sorted(self)
+        """
+        print la list for impression
+        """
         print(liste_triee_pour_impression)
