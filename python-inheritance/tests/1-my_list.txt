@@ -1,0 +1,39 @@
+# Importation de la classe MyList (comme dans les fichiers main.py)
+>>> MyList = __import__('1-my_list').MyList
+
+# Test 1: Création d'une instance et utilisation de print_sorted
+>>> my_list = MyList([1, 4, 2, 3, 5])
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Test 2: Vérifier que la liste originale n'est pas modifiée
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+# Test 3: Liste vide
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+>>> print(empty_list)
+[]
+
+# Test 4: Liste avec des nombres négatifs et zéros
+>>> mixed_list = MyList([1, -5, 0, 10, -2])
+>>> mixed_list.print_sorted()
+[-5, -2, 0, 1, 10]
+>>> print(mixed_list)
+[1, -5, 0, 10, -2]
+
+# Test 5: Liste déjà triée
+>>> already_sorted_list = MyList([10, 20, 30])
+>>> already_sorted_list.print_sorted()
+[10, 20, 30]
+>>> print(already_sorted_list)
+[10, 20, 30]
+
+# Test 6: Liste avec un seul élément
+>>> single_item_list = MyList([42])
+>>> single_item_list.print_sorted()
+[42]
+>>> print(single_item_list)
+[42]
