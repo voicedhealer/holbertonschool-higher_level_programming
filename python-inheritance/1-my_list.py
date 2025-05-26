@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Ce module définit une classe MyList qui hérite de list
+"""
 class Mylist(list):
     """
     Classe Mylist qui hérite de la calsse list
