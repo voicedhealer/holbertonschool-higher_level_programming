@@ -2,7 +2,7 @@
 """
 Ce module définit une classe MyList qui hérite de list
 """
-class Mylist(list):
+class MyList(list):
     """
     Classe Mylist qui hérite de la calsse list
     """
@@ -12,7 +12,5 @@ class Mylist(list):
         les éléments de la liste
         """
         liste_triee_pour_impression = sorted(self)
-        """
-        print la list for impression
-        """
+
         print(liste_triee_pour_impression)
