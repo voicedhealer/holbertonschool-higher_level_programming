@@ -6,4 +6,7 @@ et methode disponible par objet
 
 
 def lookup(obj):
-    return list  # méthode qui retourne une liste
+    """
+    Méthode qui retoourne une liste
+    """
+    return list
