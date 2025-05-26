@@ -2,6 +2,8 @@
 """
 Ce module définit une classe MyList qui hérite de list
 """
+
+
 class MyList(list):
     """
     Classe Mylist qui hérite de la calsse list
@@ -9,7 +11,7 @@ class MyList(list):
     def print_sorted(self):
         """
         Méthode publique print_stored qui affiche
-        les éléments 
+        les éléments triés
         """
         liste_triee_pour_impression = sorted(self)
 
