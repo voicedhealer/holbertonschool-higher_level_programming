@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Ce module définit une classe de base pour la géométrie, BaseGeometry.
+Ce module définit une classe de base pour la géométrie.
 """
 
 
@@ -34,9 +34,7 @@ class BaseGeometry:
             ou égal à 0.
                         Le message est "{name} must be greater than 0".
         """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
-
-
