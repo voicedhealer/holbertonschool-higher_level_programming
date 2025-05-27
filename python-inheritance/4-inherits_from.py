@@ -4,8 +4,9 @@ Module pour la fonction inherits_from.
 Vérifie l'héritage strict d'une classe.
 """
 
+
 def inherits_from(obj, a_class):
-    
+
     """
     Retourne True si obj est une instance d'une classe héritant de a_class
     (directement ou indirectement), mais pas de a_class elle-même.
