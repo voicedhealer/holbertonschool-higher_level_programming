@@ -29,12 +29,12 @@ class BaseGeometry:
 
         Raises:
             TypeError: Si 'value' n'est pas un entier.
-                       Le message est "<name> must be an integer".
+                       Le message est "{name} must be an integer".
             ValueError: Si 'value' est un entier mais est inférieur
             ou égal à 0.
-                        Le message est "<name> must be greater than 0".
+                        Le message est "{name} must be greater than 0".
         """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
