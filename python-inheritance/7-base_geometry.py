@@ -34,7 +34,7 @@ class BaseGeometry:
             ou égal à 0.
                         Le message est "<name> must be greater than 0".
         """
-        if type(value) is not int:  # Ou : if not isinstance(value, int):
+        if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
