@@ -7,9 +7,21 @@ from abc import ABC, abstractmethod
 import math
 
 
+def shape_info(shape_object):
+    """
+    fonction shape info
+    L'objet doit avoir des méthodes area() et perimeter()
+    """
+
+    resultat_de_aera = shape_object.aera()
+    resultat_de_peremeter = shape_object.perimeter()
+    print(f"Area: {resultat_de_area}")
+    print(f"Perimeter: {resultat_de_perimeter}")
+
+
 class Shape(ABC):
     """
-    classe Shape
+    Classe de base abstraite pour les formes géométriques.
     """
 
     @abstractmethod
@@ -58,3 +70,18 @@ class Rectangle(Shape):
 
     def perimeter(self):
         return 2 * (self.width + self.height)
+
+    if __name__ == "__main__":
+        # Par exemple, avec un rayon de 5
+        mon_cercle = Circle(radius=5)
+
+        # Crée une instance de Rectangle
+        mon_rectangle = Rectangle(width=4, height=7)
+
+        # Teste shape_info avec le cercle
+        print("Info pour le cercle :")
+        shape_info(mon_cercle)
+
+        # Teste shape_info avec le rectangle
+        print("\nInfo pour le rectangle :")
+        shape_info(mon_rectangle)
