@@ -7,17 +7,6 @@ from abc import ABC, abstractmethod
 import math
 
 
-def shape_info(shape_object):
-    """
-    Affiche l'aire et le périmètre d'un objet forme donné.
-    L'objet doit avoir des méthodes area() et perimeter().
-    """
-    resultat_de_area = shape_object.area()
-    resultat_de_perimeter = shape_object.perimeter()
-    print(f"Area: {resultat_de_area}")
-    print(f"Perimeter: {resultat_de_perimeter}")
-
-
 class Shape(ABC):
     """
     Classe de base abstraite pour les formes géométriques.
