@@ -42,11 +42,7 @@ class Circle(Shape):
     Class cercle calcul de la surface d'un cercle avec pi
     """
     def __init__(self, radius):
-        if not isinstance(radius, (int, float)):
-            raise TypeError("Radius must be a number")
-        if radius < 0:
-            raise ValueError("Radius cannot be negative")
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         return math.pi * (self.radius ** 2)
@@ -60,12 +56,6 @@ class Rectangle(Shape):
     Class Rectangle
     """
     def __init__(self, width, height):
-        if not isinstance(width, (int, float)):
-            raise TypeError("Width must be a number")
-        if not isinstance(height, (int, float)):
-            raise TypeError("Height must be a number")
-        if width < 0 or height < 0:
-            raise ValueError("Width and Height cannot be negative")
         self.width = width
         self.height = height
 
@@ -76,7 +66,7 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
 
 
-if __name__ == "__main__":
+def shape_info(shape):
     # Par exemple, avec un rayon de 5
     mon_cercle = Circle(radius=5)
 
