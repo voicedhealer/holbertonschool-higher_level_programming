@@ -55,17 +55,12 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
 
 
-def shape_info(shape):
-    # Par exemple, avec un rayon de 5
-    mon_cercle = Circle(radius=5)
-
-    # Crée une instance de Rectangle
-    mon_rectangle = Rectangle(width=4, height=7)
-
-    # Teste shape_info avec le cercle
-    print("Info pour le cercle :")
-    shape_info(mon_cercle)
-
-    # Teste shape_info avec le rectangle
-    print("\nInfo pour le rectangle :")
-    shape_info(mon_rectangle)
+def shape_info(shape_object):
+    """
+    Affiche l'aire et le périmètre d'un objet forme donné.
+    L'objet doit avoir des méthodes area() et perimeter().
+    """
+    resultat_de_area = shape_object.area()
+    resultat_de_perimeter = shape_object.perimeter()
+    print(f"Area: {resultat_de_area}")
+    print(f"Perimeter: {resultat_de_perimeter}")
