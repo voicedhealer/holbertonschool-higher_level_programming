@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module illustrant les classes de base abstraites
-avec Shape, area, perimeter
+avec Shape, area, perimeter et la fonction shape_info.
 """
 from abc import ABC, abstractmethod
 import math
@@ -9,10 +9,9 @@ import math
 
 def shape_info(shape_object):
     """
-    fonction shape info
-    L'objet doit avoir des méthodes area() et perimeter()
+    Affiche l'aire et le périmètre d'un objet forme donné.
+    L'objet doit avoir des méthodes area() et perimeter().
     """
-
     resultat_de_area = shape_object.area()
     resultat_de_perimeter = shape_object.perimeter()
     print(f"Area: {resultat_de_area}")
@@ -23,7 +22,6 @@ class Shape(ABC):
     """
     Classe de base abstraite pour les formes géométriques.
     """
-
     @abstractmethod
     def area(self):
         """
@@ -44,6 +42,8 @@ class Circle(Shape):
     Class cercle calcul de la surface d'un cercle avec pi
     """
     def __init__(self, radius):
+        if not isinstance(radius, (int, float)):
+            raise TypeError("Radius must be a number")
         if radius < 0:
             raise ValueError("Radius cannot be negative")
         self.radius = radius
@@ -60,6 +60,10 @@ class Rectangle(Shape):
     Class Rectangle
     """
     def __init__(self, width, height):
+        if not isinstance(width, (int, float)):
+            raise TypeError("Width must be a number")
+        if not isinstance(height, (int, float)):
+            raise TypeError("Height must be a number")
         if width < 0 or height < 0:
             raise ValueError("Width and Height cannot be negative")
         self.width = width
