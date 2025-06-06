@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Module qui fournit une fonction pour sauvegarder un objet Python
+dans un fichier texte au format JSON.
+"""
 
 import json
 
