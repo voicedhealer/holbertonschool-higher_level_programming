@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 """
-Script qui ajoute tous les arguments de la ligne de commande à une liste Python
-et les sauvegarde dans un fichier JSON ('add_item.json').
+Ce script ajoute tous les arguments de la ligne de commande à une liste Python,
+puis sauvegarde cette liste dans un fichier JSON nommé 'add_item.json'.
 
-- Utilise save_to_json_file pour la sérialisation.
-- Utilise load_from_json_file pour la désérialisation.
-- Crée le fichier s'il n'existe pas.
+- Si le fichier existe, il charge la liste existante avec load_from_json_file.
+- Si le fichier n'existe pas, il commence avec une liste vide.
+- Les nouveaux arguments sont ajoutés à la liste.
+- La liste finale est sauvegardée avec save_to_json_file.
+
+Fonctions utilisées :
+- save_to_json_file (importée de save_to_json_file.py)
+- load_from_json_file (importée de load_from_json_file.py)
 """
-
 import sys
 import os
 from save_to_json_file import save_to_json_file
