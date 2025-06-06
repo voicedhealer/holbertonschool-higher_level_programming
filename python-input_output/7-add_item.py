@@ -16,8 +16,14 @@ import sys
 import os
 from save_to_json_file import save_to_json_file
 from load_from_json_file import load_from_json_file
+"""
+import module
+"""
 
 filename = "add_item.json"
+"""
+utilisation de if et else
+"""
 
 if os.path.exists(filename):
     items = load_from_json_file(filename)
