@@ -131,6 +131,6 @@ GET https://fr.wikipedia.org/w/api.php?action=query&titles=Terre&prop=extracts&e
 ## Auteur
 
 Projet réalisé dans le cadre d’un apprentissage ou d’un développement professionnel autour des API RESTful.
-# Vivien Bernardot student Holberton school Dijon(21)(C26)
+// Vivien Bernardot student Holberton school Dijon(21)(C26)
 
 ---
