@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import http.server
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
-class Http(http.server.BaseHTTPRequestHandler):
+class Http(BaseHTTPRequestHandler):
     """
     Handler HTTP personnalisé
     """
