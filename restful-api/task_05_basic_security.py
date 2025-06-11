@@ -8,15 +8,14 @@ app.config['JWT_SECRET_KEY'] = 'super-secret-key'
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
+# Version corrigée avec structure utilisateur complète
 users = {
-    "user1": {
-        "username": "user1", 
-        "password": generate_password_hash("password"), 
+    "user": {
+        "password": generate_password_hash("pass"),
         "role": "user"
     },
-    "admin1": {
-        "username": "admin1", 
-        "password": generate_password_hash("password"), 
+    "admin": {
+        "password": generate_password_hash("adminpass"),
         "role": "admin"
     }
 }
@@ -27,13 +26,11 @@ def verify_password(username, password):
         return username
     return None
 
-# Routes Basic Authentication
-@app.route('/basic-protected')
+@app.route('/basic-auth')
 @auth.login_required
-def basic_protected():
+def basic_auth():
     return "Basic Auth: Access Granted"
 
-# Routes JWT Authentication  
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -44,7 +41,7 @@ def login():
     password = data['password']
     
     if username in users and check_password_hash(users[username]["password"], password):
-        additional_claims = {"role": users[username]["role"]}
+        additional_claims = {"role": users[username]["role"]}  # Maintenant valide
         access_token = create_access_token(
             identity=username,
             additional_claims=additional_claims
