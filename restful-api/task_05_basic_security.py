@@ -8,19 +8,24 @@ app.config['JWT_SECRET_KEY'] = 'super-secret-key'
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
-
 users = {
-    "user": 
-        {"username": "user", "password": generate_password_hash("password"), "role": "user"},
-    "admin":
-        {"username": "admin", "password": generate_password_hash("password"), "role": "admin"}
+    "user": {
+        "username": "user", 
+        "password": generate_password_hash("password"), 
+        "role": "user"
+    },
+    "admin": {
+        "username": "admin", 
+        "password": generate_password_hash("password"), 
+        "role": "admin"
+    }
 }
 
 @auth.verify_password
 def verify_password(username, password):     
     if username in users and check_password_hash(users[username]["password"], password):
         return username
-    return None
+    return None  # Correction de l'indentation
 
 @app.route('/basic-protected')
 @auth.login_required
@@ -30,12 +35,15 @@ def basic_protected():
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
-    username = data['username']
-    password = data['password']
+    # Vérification AVANT d'accéder aux données
     if not data or 'username' not in data or 'password' not in data:
         return jsonify({"error": "Username and password required"}), 400
     
-    if username in users and check_password_hash(username["password"], password):
+    username = data['username']
+    password = data['password']
+    
+    # Correction : users[username]["password"] au lieu de username["password"]
+    if username in users and check_password_hash(users[username]["password"], password):
         additional_claims = {"role": users[username]["role"]}
         access_token = create_access_token(
             identity=username,
