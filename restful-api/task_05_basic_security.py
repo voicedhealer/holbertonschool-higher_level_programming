@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''
-Tjis modules provides a set of routes and methods to secure HTTP acces
-in the context of a simple Flask server.
+Ce module fournit des routes sécurisées pour un serveur Flask simple.
 '''
 from flask import Flask, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -11,29 +10,35 @@ from flask_jwt_extended import (
     jwt_required, get_jwt_identity
 )
 
-
 app = Flask(__name__)
+
+# Utilisateurs avec mot de passe hashé et rôle
 users = {
     "user1": {"username": "user1", "password": generate_password_hash("password"), "role": "user"},
     "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
 }
+
 auth = HTTPBasicAuth()
 
+# Vérification pour Basic Auth
 @auth.verify_password
 def verify_password(username, password):
     user = users.get(username)
     if user and check_password_hash(user["password"], password):
-        return user
+        return user  # ← retourne l'objet user (voir remarque plus bas)
     return None
 
+# Configuration JWT
 app.config["JWT_SECRET_KEY"] = "super-secret-key"
 jwt = JWTManager(app)
 
+# Route protégée par Basic Auth
 @app.route('/basic-protected')
 @auth.login_required
 def basic_protected():
     return "Basic Auth: Access Granted"
 
+# Route de login pour obtenir un token JWT
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -44,14 +49,15 @@ def login():
     if user and check_password_hash(user["password"], password):
         access_token = create_access_token(identity={"username": username, "role": user["role"]})
         return jsonify(access_token=access_token)
-
     return jsonify({"error": "Invalid credentials"}), 401
 
+# Route protégée par JWT (tout utilisateur connecté)
 @app.route('/jwt-protected')
 @jwt_required()
 def jwt_protected():
     return "JWT Auth: Access Granted"
 
+# Route réservée au rôle admin
 @app.route('/admin-only')
 @jwt_required()
 def admin_only():
@@ -60,6 +66,7 @@ def admin_only():
         return jsonify({"error": "Admin access required"}), 403
     return "Admin Access: Granted"
 
+# Gestion des erreurs JWT
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401
