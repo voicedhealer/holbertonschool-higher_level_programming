@@ -75,4 +75,4 @@ Pour certains exercices, des bases de données de test sont nécessaires. Vous d
 
 ## Auteur
 
-* ** Vivien Bernardot ** -
+* **[Vivien Bernardot]** -
