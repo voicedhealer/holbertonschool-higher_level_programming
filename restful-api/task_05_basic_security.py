@@ -5,10 +5,7 @@ Ce module fournit des routes sécurisées pour un serveur Flask simple.
 from flask import Flask, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_httpauth import HTTPBasicAuth
-from flask_jwt_extended import (
-    JWTManager, create_access_token,
-    jwt_required, get_jwt_identity
-)
+from flask_jwt_extended import (JWTManager, create_access_token,jwt_required, get_jwt_identity)
 
 app = Flask(__name__)
 
