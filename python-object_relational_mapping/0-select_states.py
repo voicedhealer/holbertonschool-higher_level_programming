@@ -34,7 +34,6 @@ if __name__ == "__main__":
         # Créer un objet curseur pour exécuter des requêtes SQL.
         cursor = db.cursor()
 
-        # Exécuter la requête SQL pour sélectionner tous les états, triés par ID.
         cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
         # Récupérer toutes les lignes du résultat de la requête.
@@ -42,7 +41,7 @@ if __name__ == "__main__":
 
         # Afficher chaque état au format requis (ID, 'Nom de l'État').
         for state in states:
-            print(state) # state est déjà un tuple (id, name)
+            print(state)
 
     except MySQLdb.Error as e:
         # Gérer les erreurs de connexion ou de requête MySQL.
