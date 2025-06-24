@@ -1,53 +1,59 @@
 #!/usr/bin/python3
 """
-Script qui liste tous les États de la base de données hbtn_0e_0_usa.
-Prend 3 arguments : mysql username, mysql password, database name.
-Utilise le module MySQLdb et se connecte à localhost:3306.
-Les résultats sont triés par states.id en ordre croissant.
+Ce module se connecte à une base de données MySQL et liste tous les états
+de la table 'states', triés par ID en ordre croissant.
 """
 
 import MySQLdb
 import sys
 
-# Le code ne doit s'exécuter que lorsqu'il est appelé directement,
-# pas lorsqu'il est importé.
-if __name__ == "__main__":
-    # Récupère les arguments de la ligne de commande.
-    # sys.argv[0] est le nom du script lui-même.
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
 
-    db = None  # Initialisation à None pour la gestion des erreurs
+def list_states(username, password, db_name):
+    """
+    Se connecte à la base de données MySQL et affiche les états.
 
+    Args:
+        username (str): Le nom d'utilisateur MySQL.
+        password (str): Le mot de passe de l'utilisateur.
+        db_name (str): Le nom de la base de données.
+    """
+    db = None
     try:
-        # Établir la connexion à la base de données MySQL.
-        # Le port par défaut de MySQL est 3306.
+        # Établir la connexion à la base de données.
         db = MySQLdb.connect(
             host="localhost",
             port=3306,
-            user=mysql_username,
-            passwd=mysql_password,
-            db=database_name
+            user=username,
+            passwd=password,
+            db=db_name
         )
 
-        # Créer un objet curseur pour exécuter des requêtes SQL.
+        # Créer un objet curseur pour exécuter des requêtes.
         cursor = db.cursor()
 
+        # Exécuter la requête SQL.
         cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-        # Récupérer toutes les lignes du résultat de la requête.
+        # Récupérer tous les résultats.
         states = cursor.fetchall()
 
-        # Afficher chaque état au format requis (ID, 'Nom de l'État').
+        # Afficher chaque état.
         for state in states:
             print(state)
 
     except MySQLdb.Error as e:
-        # Gérer les erreurs de connexion ou de requête MySQL.
+        # Gérer les erreurs MySQL.
         print(f"Erreur MySQL: {e}")
     finally:
-        # S'assurer que la connexion est fermée, même en cas d'erreur.
+        # Fermer la connexion en toute sécurité.
         if db:
-            cursor.close()
             db.close()
+
+
+if __name__ == "__main__":
+    """
+    Point d'entrée du script. Récupère les arguments et appelle la fonction
+    principale.
+    """
+    if len(sys.argv) == 4:
+        list_states(sys.argv[1], sys.argv[2], sys.argv[3])
