@@ -99,6 +99,6 @@ Chaque script est un programme Python qui doit être exécuté depuis la ligne d
 
 ## Auteur
 
-* **[Vivien Bernardot/ Voicedhealer]** - [votre-email@example.com](mailto:vivien.bernardot@gmail.fr)
+* **[Vivien Bernardot/ Voicedhealer]**
 
 ---
