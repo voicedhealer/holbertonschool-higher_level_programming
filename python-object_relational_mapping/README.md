@@ -99,6 +99,6 @@ Chaque script est un programme Python qui doit être exécuté depuis la ligne d
 
 ## Auteur
 
-* **[Vivien Bernardot/ Voicedhealer]**
+* Vivien Bernardot
 
 ---
