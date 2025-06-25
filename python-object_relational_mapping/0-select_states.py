@@ -6,7 +6,8 @@ Script qui liste tous les États de la base de données hbtn_0e_0_usa.
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
+
+def main():
 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -21,9 +22,7 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
     rows = cursor.fetchall()
 
     for row in rows:
@@ -31,3 +30,7 @@ if __name__ == "__main__":
 
     cursor.close()
     db.close()
+
+
+if __name__ == "__main__":
+    main()
