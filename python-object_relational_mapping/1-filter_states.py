@@ -1,24 +1,40 @@
 #!/usr/bin/python3
-'''Module to list states starting with N'''
+"""
+Script qui liste tous les États dont le nom commence par 'N' (majuscule)
+depuis la base de données hbtn_0e_0_usa.
+"""
 
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    user = sys.argv[1]
-    pwd = sys.argv[2]
-    db_name = sys.argv[3]
+    # Récupère les arguments de la ligne de commande.
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
 
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=user, passwd=pwd, db=db_name)
+    # Connexion à la base de données.
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=mysql_username,
+        passwd=mysql_password,
+        db=database_name
+    )
 
+    # Création du curseur.
     cursor = db.cursor()
-    cursor.execute("SELECT id, name FROM states WHERE name LIKE 'N%' "
-                   "ORDER BY id ASC;")
+
+    # Exécution de la requête avec le filtre
+    # BINARY pour la sensibilité à la casse.
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+    cursor.execute(query)
+
+    # Récupération et affichage des résultats.
     rows = cursor.fetchall()
+    for row in rows:
+        print(row)
 
-    for id, name in rows:
-        print("({}, '{}')".format(id, name))
-
+    # Fermeture des connexions.
     cursor.close()
     db.close()
