@@ -1,59 +1,40 @@
 #!/usr/bin/python3
 """
-Ce module se connecte à une base de données MySQL et liste tous les états
-de la table 'states', triés par ID en ordre croissant.
+Script qui liste tous les États de la base de données hbtn_0e_0_usa.
 """
 
 import MySQLdb
 import sys
 
-
-def list_states(username, password, db_name):
-    """
-    Se connecte à la base de données MySQL et affiche les états.
-
-    Args:
-        username (str): Le nom d'utilisateur MySQL.
-        password (str): Le mot de passe de l'utilisateur.
-        db_name (str): Le nom de la base de données.
-    """
-    db = None
-    try:
-        # Établir la connexion à la base de données.
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            passwd=password,
-            db=db_name
-        )
-
-        # Créer un objet curseur pour exécuter des requêtes.
-        cursor = db.cursor()
-
-        # Exécuter la requête SQL.
-        cursor.execute("SELECT * FROM states ORDER BY id ASC")
-
-        # Récupérer tous les résultats.
-        states = cursor.fetchall()
-
-        # Afficher chaque état.
-        for state in states:
-            print(state)
-
-    except MySQLdb.Error as e:
-        # Gérer les erreurs MySQL.
-        print(f"Erreur MySQL: {e}")
-    finally:
-        # Fermer la connexion en toute sécurité.
-        if db:
-            db.close()
-
-
 if __name__ == "__main__":
-    """
-    Point d'entrée du script. Récupère les arguments et appelle la fonction
-    principale.
-    """
-    if len(sys.argv) == 4:
-        list_states(sys.argv[1], sys.argv[2], sys.argv[3])
+    # Récupère les arguments de la ligne de commande.
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
+
+    # Établir la connexion à la base de données MySQL.
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=mysql_username,
+        passwd=mysql_password,
+        db=database_name
+    )
+
+    # Créer un objet curseur pour exécuter des requêtes SQL.
+    cursor = db.cursor()
+
+    # Exécuter la requête SQL pour sélectionner tous les états, triés par ID.
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+
+    # Récupérer toutes les lignes du résultat de la requête.
+    rows = cursor.fetchall()
+
+    # Afficher chaque état. La fonction print() sur un tuple
+    # produit le format attendu (id, 'nom').
+    for row in rows:
+        print(row)
+
+    # Fermer le curseur et la connexion.
+    cursor.close()
+    db.close()
