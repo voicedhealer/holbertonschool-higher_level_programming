@@ -13,16 +13,16 @@ def main():
     Fonction principale qui exécute la connexion,
     la requête et l'affichage.
     """
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+    username = sys.argv[1]
+    password = sys.argv[2]
+    name = sys.argv[3]
 
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
+        user=username,
+        passwd=password,
+        db=name
     )
 
     cursor = db.cursor()
