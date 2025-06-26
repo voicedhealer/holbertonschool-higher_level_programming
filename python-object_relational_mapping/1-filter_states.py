@@ -25,7 +25,8 @@ def main():
     cur = db.cursor()
 
     # Exécution de la requête avec un filtre binaire sensible à la casse
-    query = ("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    query = (
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
     cur.execute(query)
 
     # Récupération et affichage des résultats
