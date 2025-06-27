@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-"""Defines State class mapped to the states table via SQLAlchemy ORM."""
+"""Defines the City class linked to the cities table."""
 
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-
-# Instance Base à utiliser pour l'héritage
-Base = declarative_base()
+from sqlalchemy import Column, Integer, String, ForeignKey
+from model_state import Base
 
 
-class State(Base):
-    """State class mapped to 'states' table"""
-    __tablename__ = 'states'
+class City(Base):
+    """Represents a city in the cities table."""
+    __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
