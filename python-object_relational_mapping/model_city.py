@@ -1,22 +1,16 @@
 #!/usr/bin/python3
-"""
-Script that defines the City class with a relationship to State.
-"""
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
+"""Defines State class mapped to the states table via SQLAlchemy ORM."""
+
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-
+# Instance Base à utiliser pour l'héritage
 Base = declarative_base()
 
 
-class City(Base):
-    """
-    City class linked to the MySQL table cities.
-    """
-    __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+class State(Base):
+    """State class mapped to 'states' table"""
+    __tablename__ = 'states'
+
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-    state = relationship("State", back_populates="cities")
-    
