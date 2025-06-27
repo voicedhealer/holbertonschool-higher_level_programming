@@ -1,45 +1,40 @@
 #!/usr/bin/python3
-"""
-Script qui se connecte à une base de données MySQL et récupère
-toutes les entrées de la table 'states'.
-"""
+
+"""Lists all states from the database hbtn_0e_0_usa."""
+
 import MySQLdb
 import sys
 
+
+def main():
+    """Connects to the database and prints all states ordered by id."""
+    # Récupération des arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+
+    # Connexion à la base MySQL
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=db_name
+    )
+
+    # Création du curseur et exécution de la requête
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
+
+    # Affichage des résultats
+    for row in rows:
+        print(row)
+
+    # Fermeture propre
+    cur.close()
+    db.close()
+
+
 if __name__ == "__main__":
-    # Récupérer les arguments en ligne de commande
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-
-    try:
-        # Établir une connexion à la base de données MySQL
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=mysql_username,
-            passwd=mysql_password,
-            db=database_name
-        )
-
-        # Créer un objet curseur pour exécuter des requêtes SQL
-        cursor = db.cursor()
-
-        # Exécuter la requête SQL pour récupérer tous les états, triés par id
-        cursor.execute("SELECT id, name FROM states ORDER BY id ASC")
-
-        # Récupérer tous les résultats de la requête
-        results = cursor.fetchall()
-
-        # Afficher les résultats
-        for row in results:
-            print(row)
-
-    except MySQLdb.Error as e:
-        print(f"Erreur de connexion ou de requête : {e}")
-    finally:
-        # Fermer le curseur et la connexion à la base de données
-        if 'cursor' in locals() and cursor:
-            cursor.close()
-        if 'db' in locals() and db:
-            db.close()
+    main()
