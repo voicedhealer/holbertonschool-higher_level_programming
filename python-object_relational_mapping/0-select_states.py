@@ -8,11 +8,7 @@ import MySQLdb
 import sys
 
 
-def main():
-    """
-    Fonction principale qui exécute la connexion,
-    la requête et l'affichage.
-    """
+if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     name = sys.argv[3]
@@ -26,7 +22,7 @@ def main():
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT id, name FROM states ORDER BY id ASC;")
     rows = cursor.fetchall()
 
     for row in rows:
@@ -34,7 +30,3 @@ def main():
 
     cursor.close()
     db.close()
-
-
-if __name__ == "__main__":
-    main()
