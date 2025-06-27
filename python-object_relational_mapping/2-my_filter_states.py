@@ -26,8 +26,10 @@ if __name__ == "__main__":
         # Créer un objet curseur pour exécuter des requêtes SQL
         cursor = db.cursor()
 
-        # Construire la requête SQL avec un paramètre pour éviter les injections SQL
-        # La méthode .execute() de MySQLdb échappe automatiquement les paramètres
+        # Construire la requête SQL avec un paramètre
+        # pour éviter les injections SQL
+        # La méthode .execute() de MySQLdb échappe
+        # automatiquement les paramètres
         query = "SELECT id, name FROM states WHERE name = %s ORDER BY id ASC"
         cursor.execute(query, (state_name_searched,))
 
