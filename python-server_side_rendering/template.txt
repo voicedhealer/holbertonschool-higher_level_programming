@@ -1,0 +1,2 @@
+Bonjour {name},
+Vous êtes invité·e à {event_title} le {event_date} à {event_location}.
