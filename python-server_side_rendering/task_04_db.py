@@ -1,11 +1,17 @@
 import sqlite3
+import json
+import csv
 from flask import Flask, render_template, request
+
+app = Flask(__name__)
 
 def create_database():
     conn = sqlite3.connect('products.db')
     cursor = conn.cursor()
+
+    cursor.execute("DROP TABLE IF EXISTS Products")
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS Products (
+        CREATE TABLE Products (
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
             category TEXT NOT NULL,
@@ -20,11 +26,6 @@ def create_database():
     conn.commit()
     conn.close()
 
-if __name__ == '__main__':
-    create_database()
-
-app = Flask(__name__)
-
 def read_sqlite():
     try:
         conn = sqlite3.connect('products.db')
@@ -36,8 +37,27 @@ def read_sqlite():
             {'id': row[0], 'name': row[1], 'category': row[2], 'price': row[3]}
             for row in rows
         ]
-    except Exception as e:
-        return None  # Sera géré dans la vue Flask
+    except Exception:
+        return None  # Cette erreur sera gérée dans la route Flask
+
+def read_json():
+    try:
+        with open('products.json', 'r') as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+def read_csv():
+    try:
+        with open('products.csv', newline='') as f:
+            products = list(csv.DictReader(f))
+            # Conversion des champs id et price qui sont lus en string
+            for p in products:
+                p['id'] = int(p['id'])
+                p['price'] = float(p['price'])
+            return products
+    except Exception:
+        return None
 
 @app.route('/products')
 def display_products():
@@ -46,11 +66,13 @@ def display_products():
     products = []
 
     if source == "json":
-        # (ta logique pour charger via JSON)
-        pass
+        products = read_json()
+        if products is None:
+            error_message = "Error reading JSON data"
     elif source == "csv":
-        # (ta logique pour charger via CSV)
-        pass
+        products = read_csv()
+        if products is None:
+            error_message = "Error reading CSV data"
     elif source == "sql":
         products = read_sqlite()
         if products is None:
@@ -60,6 +82,10 @@ def display_products():
 
     return render_template(
         "product_display.html",
-        products=products,
+        products=products if products else [],
         error_message=error_message
     )
+
+if __name__ == "__main__":
+    create_database()
+    app.run(debug=True, port=5000)
